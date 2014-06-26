@@ -36,7 +36,7 @@
                         <div id="login" class="animate form">
                             <table>
                                 <tr>
-                                    <th ><FONT  SIZE=20>
+                                    <th ><FONT  SIZE=20 color="olive">
                                         @Model.title
                                     </FONT>
                                     </th>
@@ -57,11 +57,12 @@
                                 
                                 <tr>
                                     <td>
-                                    Description:
+                                        <font color="olive">
+                                    Description:</font>
                                     </td>
                                  
                                     <td>
-                                    <FONT  SIZE=5>
+                                    <FONT  SIZE=5 color="olive">
                                         @Model.description
                                         </FONT>
                                       </td>
@@ -69,10 +70,11 @@
                                     
                                 <tr>
                                     <td>
-                                    Price:
+                                        <font color="olive">
+                                    Price:</font>
                                     </td>
                                     <td>
-                                        <FONT  SIZE=5>
+                                        <FONT  SIZE=5 color="olive">
                                         @Model.Price
                                             </FONT>
                                     </td>
@@ -81,10 +83,11 @@
                                 
                                 <tr>
                                     <td>
-                                    Loaction:
+                                        <font color="olive">
+                                    Loaction:</font>
                                     </td>
                                      <td>
-                                         <FONT  SIZE=5>
+                                         <FONT  SIZE=5 color="olive">
                                          @Model.location
                                              </FONT>
                                          </td>
@@ -92,10 +95,11 @@
                                      
                                 <tr>
                                     <td>
-                                    Contact:
+                                        <font color="olive">
+                                    Contact:</font>
                                     </td>
                                     <td>     
-                                    <FONT  SIZE=5>
+                                    <FONT  SIZE=5 color="olive">
                                          @Model.contact
                                              </FONT>
                                      </td>
@@ -103,10 +107,11 @@
                                 
                                 <tr>
                                     <td>
-                                    Category:
+                                        <font color="olive">
+                                    Category:</font>
                                     </td>
                                     <td>
-                                        <FONT  SIZE=5>
+                                        <FONT  SIZE=5 color="olive" >
                                         @Model.category
                                             </FONT>
                                    
@@ -119,32 +124,32 @@
                             <br />
                              <br />
                              <br />
-                            <h1>Comments</h1>
+                            <h1><font color="olive">Comments</font></h1>
        
                             @foreach(var a in ViewBag.l)
         {	
        <table>
            <tr>
                
-                  <FONT  SIZE=5>
+                  <FONT  SIZE=5 color="olive">
                     Name
                       </FONT>
                
                
                </tr>
               
-               <tr>
-                    @a.Name
+               <tr><font color="olive">
+                    @a.Name</font>
                </tr>
            
            <tr>
               
-                    <FONT  SIZE=5>
+                    <FONT  SIZE=5 color="olive">
                    Comment
                         </FONT>
              </tr>
-               <tr>
-                   @a.Comment1
+               <tr><font color="olive">
+                   @a.Comment1</font>
                
            </tr>
 </table>
