@@ -1,0 +1,293 @@
+﻿@{
+    ViewBag.Title = "Search1";
+}
+
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Book Store Template, Free CSS Template, CSS Website Layout</title>
+<meta name="keywords" content="Book Store Template, Free CSS Template, CSS Website Layout, CSS, HTML" />
+<meta name="description" content="Book Store Template, Free CSS Template, Download CSS Website" />
+<link href="~/Content/templatemo_style.css" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+        <meta name="description" content="WELCOME TO FREIND ZONE" />
+        <meta name="keywords" content="html5, css3, form, switch, animation, :target, pseudo-class" />
+        <meta name="author" content="Codrops" />
+        <link rel="shortcut icon" href="../favicon.ico"/> 
+        <link rel="stylesheet" type="text/css" href="~/content/demo.css" />
+        <link rel="stylesheet" type="text/css" href="~/content/style.css" />
+		<link rel="stylesheet" type="text/css" href="~/content/animate-custom.css" />
+        
+        <script src="~/Scripts/jquery-1.7.1.js"></script>
+</head>
+<body>
+
+     <div id="templatemo_container">
+	<div id="templatemo_menu">
+    	<ul>
+            <li>@Html.ActionLink("Home","index","Home")</li>
+            
+            <li>@Html.ActionLink("post a free add","sign1","Customer")</li>            
+             <li>@Html.ActionLink("Manage Adds","sign2","Customer")</li>
+            <li>@Html.ActionLink("Help","help","Home")</li> 
+           
+            <li>@Html.ActionLink("Contacts","contact","Home")</li>
+            <li>@Html.ActionLink("Search","Search1","Home")</li>
+    	</ul>
+    </div> <!-- end of menu -->
+    
+    <div id="templatemo_header" background="~/images/templatemo_header_bg_blank.jpg">
+    	
+            <div id="templatemo_special_offers">
+        	<p>
+                <span><font color="white">special</font></span><font color="white"> discounts for
+        new Adds </font>
+        	</p>
+			<a href="/Home/subpage" style="margin-left: 50px;">Read more...</a>
+        </div>
+        
+        
+        <div id="templatemo_new_books">
+        	<ul>
+                <li><font color="white">New Kinds</font></li>
+                <li><font color="white">of pets and many other categories</font></li>
+                <li<font color="white">>meet vendors</font></li>
+            </ul>
+            <a href="/Home/subpage" style="margin-left: 50px;">Read more...</a>
+        </div>
+    </div> <!-- end of header -->
+    
+    <div id="templatemo_content">
+    	
+        <div id="templatemo_content_left">
+        	<div class="templatemo_content_left_section">
+            	<h1>HEY Welcome</h1>
+                <ul>
+                    <li><h2>Welcome to  BaichDay.com</h2></li>
+                    <li><h2>One of the amazing site</h2></li>
+                    <li><h2>where cutomers meet the sellers</h2></li>
+                    <li><h2>and sell their goods</h2></li>
+                    <li><h2>for free.</h2></li>
+                    <li><h2>Post your free adds and dont forget </h2></li>
+                    <li><h2>to give your valuable </h2></li>
+                    <li><h2>feedback to</a></h2></li>
+                    <li><h2><a href="http://www.facebook.com/safiyan.zulfiqar"> this link</a></h2></li>
+            	</ul>
+            </div>
+    <div class="templatemo_content_left_section">
+            	<h1>Search Criteria</h1>
+                <ul>
+                    <li><h2><font color="white">which City</font></h2></li>
+                   @* <input type="button" id="lahore" value="lahore" onclick="f1()" />*@
+                    <li onclick="f1() " id="lahore" value="lahore">lahore</li>
+                    <li onclick="f2()" id="islamabad" value="islamabad"> Islamabad</li>
+                    <li onclick="f3()" id="karachi" value="karachi">Karachi</li>
+                    <li><h2><font color="white">Price ranges</font></h2></li>
+                    <li onclick="f4()">1*** to 2****</li>
+                    <li onclick="f5()">2*** to 3****</li>
+                    <li onclick="f6()">3**** to 4****</li>
+                    <li><h2><font color="white">Category </h2></font></li>
+                    <li onclick="f7()">Mobile Phone And Accesories</li>
+                    <li onclick="f8()">Pets</li>
+                    <li onclick="f9()" >Vehicles</li>
+                    <li onclick="f10()" >Property</li>
+            	</ul>
+            </div>
+            </div>
+    
+    
+    <div id="templatemo_content_right">
+
+        	
+      </div>
+        
+        
+        <!-- end of content right -->
+        
+     <div id="templatemo_footer">
+    
+	       <a href="/Home/subpage">Home</a> | <a href="/Home/subpage">Search</a> | <a href="/Home/subpage">Books</a> | <a href="#">New Releases</a> | <a href="#">FAQs</a> | <a href="#">Contact Us</a><br />
+        Copyright © 2048 <a href="#"><strong>Your Company Name</strong></a> | <a href="http://www.iwebsitetemplate.com" target="_parent">Website Templates</a> by <a href="http://www.templatemo.com" target="_parent" title="free css templates">Free CSS Templates</a>	</div> 
+    <!-- end of footer -->
+<!--  Free CSS Template www.templatemo.com -->
+</div> <!-- end of container -->
+<div align=center>This template  downloaded form <a href='http://all-free-download.com/free-website-templates/'>free website templates</a></div>
+   
+
+
+<script>
+    function f1() {
+        var u = 'lahore';
+        $('#templatemo_content_right').empty();
+        $.getJSON('/Home/search12?u='+ $('#lahore').val(), function (data) {
+           
+            $.each(data, function (i, field) {
+                
+               
+                $('#templatemo_content_right').append("<div class='templatemo_product_box'><h1>" + field.title + "</h1><img src='/images/" + field.image + "' alt='image' width='70' height='70' /><div class='product_info'><p>" + field.description + "</p><h3>RS " + field.Price + "</h3><div ><a href='/Home/postShow/" + field.Id + ">Detail</a></div></div><div class='cleaner'>&nbsp;</div></div>");
+                $('#templatem0_content_right').append("<img src='~/images/" + field.image + " alt='image' width='70' height='70' />");
+            });
+            
+        
+        });
+    
+
+    }
+
+    
+      
+        
+    
+    function f2()
+    {
+       
+        $('#templatemo_content_right').empty();
+        $.getJSON('/Home/search13?u=' + $('#islamabad').val(), function (data) {
+
+            $.each(data, function (i, field) {
+
+
+                $('#templatemo_content_right').append("<div class='templatemo_product_box'><h1>" + field.title + "</h1><img src='/images/" + field.image + "' alt='image' width='70' height='70' /><div class='product_info'><p>" + field.description + "</p><h3>RS " + field.Price + "</h3><div ><a href='/Home/postShow/" + field.Id + ">Detail</a></div></div><div class='cleaner'>&nbsp;</div></div>");
+                $('#templatem0_content_right').append("<img src='~/images/" + field.image + " alt='image' width='70' height='70' />");
+            });
+
+
+        });
+
+    }
+    function f3()
+    {
+        $('#templatemo_content_right').empty();
+        $.getJSON('/Home/search14?u=' + $('#karachi').val(), function (data) {
+
+            $.each(data, function (i, field) {
+
+
+                $('#templatemo_content_right').append("<div class='templatemo_product_box'><h1>" + field.title + "</h1><img src='/images/" + field.image + "' alt='image' width='70' height='70' /><div class='product_info'><p>" + field.description + "</p><h3>RS " + field.Price + "</h3><div ><a href='/Home/postShow/" + field.Id + ">Detail</a></div></div><div class='cleaner'>&nbsp;</div></div>");
+                $('#templatem0_content_right').append("<img src='~/images/" + field.image + " alt='image' width='70' height='70' />");
+            });
+
+
+        });
+        
+    }
+    function f4()
+    {
+        $('#templatemo_content_right').empty();
+        $.getJSON("/Home/price1", function (data) {
+            $.each(data, function (i, field) {
+
+
+                $('#templatemo_content_right').append("<div class='templatemo_product_box'><h1>" + field.title + "</h1><img src='/images/" + field.image + "' alt='image' width='70' height='70' /><div class='product_info'><p>" + field.description + "</p><h3>RS " + field.Price + "</h3><div ><a href='/Home/postShow/" + field.Id + ">Detail</a></div></div><div class='cleaner'>&nbsp;</div></div>");
+                $('#templatem0_content_right').append("<img src='~/images/" + field.image + " alt='image' width='70' height='70' />");
+            });
+
+
+        });
+
+    }
+    function f5() {
+        $('#templatemo_content_right').empty();
+        $.getJSON("/Home/price2", function (data) {
+            $.each(data, function (i, field) {
+
+
+                $('#templatemo_content_right').append("<div class='templatemo_product_box'><h1>" + field.title + "</h1><img src='/images/" + field.image + "' alt='image' width='70' height='70' /><div class='product_info'><p>" + field.description + "</p><h3>RS " + field.Price + "</h3><div ><a href='/Home/postShow/" + field.Id + ">Detail</a></div></div><div class='cleaner'>&nbsp;</div></div>");
+                $('#templatem0_content_right').append("<img src='~/images/" + field.image + " alt='image' width='70' height='70' />");
+            });
+
+
+        });
+    }
+    function f6() {
+        $('#templatemo_content_right').empty();
+        $.getJSON("/Home/price3", function (data) {
+            $.each(data, function (i, field) {
+
+
+                $('#templatemo_content_right').append("<div class='templatemo_product_box'><h1>" + field.title + "</h1><img src='/images/" + field.image + "' alt='image' width='70' height='70' /><div class='product_info'><p>" + field.description + "</p><h3>RS " + field.Price + "</h3><div ><a href='/Home/postShow/" + field.Id + ">Detail</a></div></div><div class='cleaner'>&nbsp;</div></div>");
+                $('#templatem0_content_right').append("<img src='~/images/" + field.image + " alt='image' width='70' height='70' />");
+            });
+
+
+        });
+    }
+    function f7()
+    {
+        $('#templatemo_content_right').empty();
+        $.getJSON("/Home/cat1", function (data) {
+
+            $.each(data, function (i, field) {
+
+
+                $('#templatemo_content_right').append("<div class='templatemo_product_box'><h1>" + field.title + "</h1><img src='/images/" + field.image + "' alt='image' width='70' height='70' /><div class='product_info'><p>" + field.description + "</p><h3>RS " + field.Price + "</h3><div ><a href='/Home/postShow/" + field.Id + ">Detail</a></div></div><div class='cleaner'>&nbsp;</div></div>");
+                $('#templatem0_content_right').append("<img src='~/images/" + field.image + " alt='image' width='70' height='70' />");
+            });
+
+
+        });
+    }
+    function f8()
+    {
+        $('#templatemo_content_right').empty();
+        $.getJSON("/Home/cat2", function (data) {
+
+            $.each(data, function (i, field) {
+
+
+                $('#templatemo_content_right').append("<div class='templatemo_product_box'><h1>" + field.title + "</h1><img src='/images/" + field.image + "' alt='image' width='70' height='70' /><div class='product_info'><p>" + field.description + "</p><h3>RS " + field.Price + "</h3><div ><a href='/Home/postShow/" + field.Id + ">Detail</a></div></div><div class='cleaner'>&nbsp;</div></div>");
+                $('#templatem0_content_right').append("<img src='~/images/" + field.image + " alt='image' width='70' height='70' />");
+            });
+
+
+        });
+    }
+    function f9()
+    {
+        $('#templatemo_content_right').empty();
+        $.getJSON("/Home/cat3", function (data) {
+
+            $.each(data, function (i, field) {
+
+
+                $('#templatemo_content_right').append("<div class='templatemo_product_box'><h1>" + field.title + "</h1><img src='/images/" + field.image + "' alt='image' width='70' height='70' /><div class='product_info'><p>" + field.description + "</p><h3>RS " + field.Price + "</h3><div ><a href='/Home/postShow/" + field.Id + ">Detail</a></div></div><div class='cleaner'>&nbsp;</div></div>");
+                $('#templatem0_content_right').append("<img src='~/images/" + field.image + " alt='image' width='70' height='70' />");
+            });
+
+
+        });
+    }
+    function f10()
+
+    {
+        $('#templatemo_content_right').empty();
+        $.getJSON("/Home/cat4", function (data) {
+
+            $.each(data, function (i, field) {
+
+
+                $('#templatemo_content_right').append("<div class='templatemo_product_box'><h1>" + field.title + "</h1><img src='/images/" + field.image + "' alt='image' width='70' height='70' /><div class='product_info'><p>" + field.description + "</p><h3>RS " + field.Price + "</h3><div ><a href='/Home/postShow/" + field.Id + ">Detail</a></div></div><div class='cleaner'>&nbsp;</div></div>");
+                $('#templatem0_content_right').append("<img src='~/images/" + field.image + " alt='image' width='70' height='70' />");
+            });
+
+
+        });
+    }
+    
+    
+    
+    
+
+</script>
+</body>
+
+    
+</html>
+    
+ 

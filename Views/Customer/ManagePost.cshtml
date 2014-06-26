@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "ManagePost";
+}
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Book Store Template, Free CSS Template, CSS Website Layout</title>
+<meta name="keywords" content="Book Store Template, Free CSS Template, CSS Website Layout, CSS, HTML" />
+<meta name="description" content="Book Store Template, Free CSS Template, Download CSS Website" />
+<link href="~/Content/templatemo_style.css" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+        <meta name="description" content="WELCOME TO FREIND ZONE" />
+        <meta name="keywords" content="html5, css3, form, switch, animation, :target, pseudo-class" />
+        <meta name="author" content="Codrops" />
+        <link rel="shortcut icon" href="../favicon.ico"/> 
+        <link rel="stylesheet" type="text/css" href="~/content/demo.css" />
+        <link rel="stylesheet" type="text/css" href="~/content/style.css" />
+		<link rel="stylesheet" type="text/css" href="~/content/animate-custom.css" />
+        
+        <script src="~/Scripts/jquery-1.7.1.js"></script>
+</head>
+<body>
+
+         <div id="templatemo_content_right">
+
+        	 @foreach(var a in Model)
+                {	
+        <div class="templatemo_product_box">
+            	<h1>@a.title</h1>
+   	      <img src="~/images/@a.image" alt="image" width="70" heigth="70" />
+                <div class="product_info">
+                	<p>@a.description</p>
+                  <h3>RS @a.Price</h3>
+                    
+                    <div class="detail_button"><a href="/Customer/delete/@a.Id">Delete add</a></div>
+                    <div class="detail_button"><a href="/Customer/edit/@a.Id">Edit add</a></div>
+                </div>
+                <div class="cleaner">&nbsp;</div>
+            </div>
+            }
+        </div>
+        
+        
+        <!-- end of content right -->
+        
+    
+    
+    </body>
+</html>

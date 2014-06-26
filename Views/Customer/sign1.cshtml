@@ -1,0 +1,165 @@
+﻿@model Baichday.Models.Customer
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Book Store Template, Free CSS Template, CSS Website Layout</title>
+    <meta name="keywords" content="Book Store Template, Free CSS Template, CSS Website Layout, CSS, HTML" />
+    <meta name="description" content="Book Store Template, Free CSS Template, Download CSS Website" />
+    <link href="~/Content/templatemo_style.css" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="WELCOME TO FREIND ZONE" />
+    <meta name="keywords" content="html5, css3, form, switch, animation, :target, pseudo-class" />
+    <meta name="author" content="Codrops" />
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="~/content/demo.css" />
+    <link rel="stylesheet" type="text/css" href="~/content/style.css" />
+    <link rel="stylesheet" type="text/css" href="~/content/animate-custom.css" />
+    <script src="~/Scripts/jquery.validate-vsdoc.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery-1.7.1.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+    <script>
+        function f1() {
+
+            $.getJSON("/Customer/checkUserName?u=" + $('#name1').val(), function (x) {
+
+                if (x) {
+                    alert("Availiable");
+                }
+                else {
+                    alert("Not availiable");
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+
+   
+    <div id="templatemo_content_right">
+
+        <div class="container">
+
+            <header>
+                <h1><strong>Welcome To BaichDay.com</strong></h1>
+                <h2> Login and Registration Form</h2>
+				
+            </header>
+            <section>				
+                <div id="container_demo" >
+                    <!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
+                    <a class="hiddenanchor" id="toregister"></a>
+                    <a class="hiddenanchor" id="tologin"></a>
+                    <div id="wrapper">
+                        <div id="login" class="animate form">
+                            @*<form  action="/Customer/signin" autocomplete="on" method="post">*@ 
+                            @using (Html.BeginForm("signin", "Customer", FormMethod.Post))
+                            {
+                                <h1>Log in</h1> 
+                                <p> 
+                                    @Html.Label("", "UserName")
+                                    @*<label for="username" class="uname" data-icon="u" > Username </label>*@
+                                    @Html.TextBoxFor(m => m.Name, new { placeholder = "enter the name" })
+                                   @Html.ValidationMessageFor(m =>m.Name)
+                                    @* <input id="Name" name="Name" required="required" type="text" placeholder="Enter User Name"/>*@
+                                </p>
+                                <p> 
+                                    @Html.Label("", "Password")
+                                    @*<label for="password" class="youpasswd" data-icon="p"> Password </label>*@
+                                     
+                                    @Html.TextBoxFor(m => m.password, new { placeholder = "enter the password", type = "password" })
+                                   @Html.ValidationMessageFor(m =>m.password)
+                                    @* <input id="password" name="password" required="required" type="password" placeholder="Enter Password" />*@ 
+                                </p>
+                                <p class="keeplogin"> 
+									<input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" /> 
+									@*<label for="loginkeeping">Keep me logged in</label>*@
+                                    @Html.Label("", "keep me logged in")
+								</p>
+                                <p class="login button"> 
+                                    <input type="submit" value="Login" /> 
+								</p>
+                                <p class="change_link">
+									
+									<a href="#toregister" class="to_register">Sign-up</a>
+								</p>
+                            @*</form>*@
+                            }
+                        </div>
+
+                        <div id="register" class="animate form">
+                            @using (Html.BeginForm("signup", "Customer", FormMethod.Post))
+                            {
+                            @*<form  action="/Home/signUp" method="post" autocomplete="on">*@ 
+                                <h1> Sign up </h1> 
+                                <p> 
+                                    @*<label for="usernamesignup" class="uname" data-icon="u">Name</label>*@
+                                    @Html.Label("", "UserName")
+                                    @Html.TextBoxFor(m => m.Name, new { placeholder = "Enter user Name" })
+                                    @Html.ValidationMessageFor(m =>m.Name)
+                                    @*<input id="name1" name="Name" required="required" type="text" placeholder="Enter Full Name" />*@
+                                </p>
+
+
+
+                                  <p> 
+                                   @* <label for="usernamesignup" class="uname" >Check avalibility</label>*@
+                                      @Html.Label("", "check availability")
+                                    <button id="username_check" name="username_check"  onclick="f1()"> Click Me </button>
+                                </p>
+
+                                 <p> 
+                                   
+                                     @Html.Label("","Password")
+                                      @Html.TextBoxFor(m => m.password, new { placeholder = "Enter password", type = "password" })
+                                     @Html.ValidationMessageFor(m =>m.password)
+                                    @*<input id="usercity" name="city" required="required" type="text" placeholder="Enter City" />*@
+                                </p>
+                                
+
+                                
+
+                               
+
+                                 <p> 
+                                   @* <label for="usernamesignup" class="uname" data-icon="u">Email</label>*@
+                                     @Html.Label("","Email")
+                                    
+                                   <input id="usercity" name="email" required="required" type="text" placeholder="Enter email"   />
+                                </p>
+    
+                                <p > 
+									<input type="submit" value="Sign up" class="submit"/> 
+								</p>
+                                <p class="change_link">  
+									Already a member ?
+									<a href="#tologin" class="to_register"> Go and log in </a>
+								</p>
+                            
+                            }
+                        </div>
+						
+                    </div>
+                </div>  
+            </section>
+        </div>
+
+
+    </div>
+    <!-- end of content right -->
+
+    <div class="cleaner_with_height">&nbsp;</div>
+    </div>
+    <!-- end of content -->
+
+
+
+
+</body>
+</html>

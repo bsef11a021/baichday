@@ -1,0 +1,119 @@
+﻿@{
+    ViewBag.Title = "search";
+}
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Book Store Template, Free CSS Template, CSS Website Layout</title>
+<meta name="keywords" content="Book Store Template, Free CSS Template, CSS Website Layout, CSS, HTML" />
+<meta name="description" content="Book Store Template, Free CSS Template, Download CSS Website" />
+<link href="~/Content/templatemo_style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<!--  Free CSS Templates from www.templatemo.com -->
+<div id="templatemo_container">
+	<div id="templatemo_menu">
+    	<ul>
+            <li><a href="/Home/index" class="current">Home</a></li>
+            <!--<li><a href="/Home/subpage">Search</a></li>-->
+            <li><a href="/Customer/sign1">Post A free Add</a></li>            
+             <li><a href="/Customer/sign2">ManageAdd</a></li>
+            <li><a href="/Home/Help">help</a></li> 
+            <li><a href="/Home/Contact">Contact</a></li>
+    	</ul>
+    </div> <!-- end of menu -->
+    
+    <div id="templatemo_header" background="~/images/templatemo_header_bg_blank.jpg">
+    	
+            <div id="templatemo_special_offers">
+        	<p>
+                <span>special</span> discounts for
+        new Adds 
+        	</p>
+			<a href="/Home/subpage" style="margin-left: 50px;">Read more...</a>
+        </div>
+        
+        
+        <div id="templatemo_new_books">
+        	<ul>
+                <li>New Kinds</li>
+                <li>of pets and many other categories</li>
+                <li>meet vendors</li>
+            </ul>
+            <a href="/Home/subpage" style="margin-left: 50px;">Read more...</a>
+        </div>
+    </div> <!-- end of header -->
+    
+    <div id="templatemo_content">
+    	
+        <div id="templatemo_content_left">
+        	<div class="templatemo_content_left_section">
+            	<h1>HEY Welcome</h1>
+                <ul>
+                    <li><h2>Welcome to  BaichDay.com</h2></li>
+                    <li><h2>One of the amazing site</h2></li>
+                    <li><h2>where cutomers meet the sellers</h2></li>
+                    <li><h2>and sell their goods</h2></li>
+                    <li><h2>for free.</h2></li>
+                    <li><h2>Post your free adds and dont forget </h2></li>
+                    <li><h2>to give your valuable </h2></li>
+                    <li><h2>feedback to</a></h2></li>
+                    <li><h2><a href="http://www.facebook.com/safiyan.zulfiqar"> this link</a></h2></li>
+            	</ul>
+            </div>
+			<div class="templatemo_content_left_section">
+            	<h1>Search Criteria</h1>
+                <ul>
+                    <li><h2>which City</h2></li>
+                    <li><a href="/Home/search?u=lahore">Lahore</a></li>
+                    <li><a href="/Home/search?u=islamabad">Islamabad</a></li>
+                    <li><a href="/Home/search?u=karachi">Karachi</a></li>
+                    <li><h2>Price ranges</h2></li>
+                    <li><a href="/Home/price?u=100">100 to 200</a></li>
+                    <li><a href="/Home/price?u=200">200 to 300</a></li>
+                    <li><a href="/Home/price?u=300" >300 to 400</a></li>
+                    <li><h2>Category </h2></li>
+                    <li><a href="/Home/category?u=m">Mobile Phone And Accesories</a></li>
+                    <li><a href="/Home/category?u=pe">Pets</a></li>
+                    <li><a href="/Home/category?u=v" >Vehicles</a></li>
+                    <li><a href="/Home/category?u=pr" >Property</a></li>
+            	</ul>
+            </div>
+            
+        
+        </div> <!-- end of content left -->
+        
+        <div id="templatemo_content_right">
+        
+        @foreach(var a in Model)
+        {	
+        <div class="templatemo_product_box">
+            	<h1>@a.title</h1>
+   	      <img src="~/images/@a.image" alt="image" width="70" heigth="70" />
+                <div class="product_info">
+                	<p>@a.description</p>
+                  <h3>RS @a.Price</h3>
+                    
+                    <div class="detail_button"><a href="/Home/postShow/@a.Id">Detail</a></div>
+                </div>
+                <div class="cleaner">&nbsp;</div>
+            </div>
+            }
+            
+            
+    </div> <!-- end of content -->
+    
+    <div id="templatemo_footer">
+    
+	       <a href="/Home/subpage">Home</a> | <a href="/Home/subpage">Search</a> | <a href="/Home/subpage">Books</a> | <a href="#">New Releases</a> | <a href="#">FAQs</a> | <a href="#">Contact Us</a><br />
+        Copyright © 2048 <a href="#"><strong>Your Company Name</strong></a> | <a href="http://www.iwebsitetemplate.com" target="_parent">Website Templates</a> by <a href="http://www.templatemo.com" target="_parent" title="free css templates">Free CSS Templates</a>	</div> 
+    <!-- end of footer -->
+<!--  Free CSS Template www.templatemo.com -->
+</div> <!-- end of container -->
+<div align=center>This template  downloaded form <a href='http://all-free-download.com/free-website-templates/'>free website templates</a></div></body>
+</html>

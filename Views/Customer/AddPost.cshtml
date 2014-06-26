@@ -1,0 +1,197 @@
+﻿
+@model Baichday.Models.Add
+@{
+    ViewBag.Title = "edit";
+}
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Book Store Template, Free CSS Template, CSS Website Layout</title>
+<meta name="keywords" content="Book Store Template, Free CSS Template, CSS Website Layout, CSS, HTML" />
+<meta name="description" content="Book Store Template, Free CSS Template, Download CSS Website" />
+<link href="~/Content/templatemo_style.css" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+        <meta name="description" content="WELCOME TO FREIND ZONE" />
+        <meta name="keywords" content="html5, css3, form, switch, animation, :target, pseudo-class" />
+        <meta name="author" content="Codrops" />
+        <link rel="shortcut icon" href="../favicon.ico"/> 
+        <link rel="stylesheet" type="text/css" href="~/content/demo.css" />
+        <link rel="stylesheet" type="text/css" href="~/content/style.css" />
+		<link rel="stylesheet" type="text/css" href="~/content/animate-custom.css" />
+      
+
+
+</head>
+<body>
+<!--  Free CSS Templates from www.templatemo.com -->
+<div id="templatemo_container">
+	<div id="templatemo_menu">
+    	<ul>
+            <li>@Html.ActionLink("Home","index","Home")</li>
+            
+            <li>@Html.ActionLink("post a free add","sign1","Customer")</li>            
+             <li>@Html.ActionLink("manage Adds","sign2","Customer")</li>
+            <li>@Html.ActionLink("Help","help","Home")</li> 
+           
+            <li>@Html.ActionLink("Contacts","contact","Home")</li>
+            <li>@Html.ActionLink("Search","Search1","Home")</li>
+    	</ul>
+    </div> <!-- end of menu -->
+    
+    <div id="templatemo_header" background="~/images/templatemo_header_bg_blank.jpg">
+    	
+            <div id="templatemo_special_offers">
+        	<p>
+                <span>special</span> discounts for
+        new Adds 
+        	</p>
+			<a href="/Home/subpage" style="margin-left: 50px;">Read more...</a>
+        </div>
+        
+        
+        <div id="templatemo_new_books">
+        	<ul>
+                <li>New Kinds</li>
+                <li>of pets and many other categories</li>
+                <li>meet vendors</li>
+            </ul>
+            <a href="/Home/subpage" style="margin-left: 50px;">Read more...</a>
+        </div>
+    </div> <!-- end of header -->
+    
+    <div id="templatemo_content">
+    	
+        <div id="templatemo_content_left">
+        	<div class="templatemo_content_left_section">
+            	<h1>HEY Welcome</h1>
+                <ul>
+                    <li><h2>Welcome to  BaichDay.com</h2></li>
+                    <li><h2>One of the amazing site</h2></li>
+                    <li><h2>where cutomers meet the sellers</h2></li>
+                    <li><h2>and sell their goods</h2></li>
+                    <li><h2>for free.</h2></li>
+                    <li><h2>Post your free adds and dont forget </h2></li>
+                    <li><h2>to give your valuable </h2></li>
+                    <li><h2>feedback to</a></h2></li>
+                    <li><h2><a href="http://www.facebook.com/safiyan.zulfiqar"> this link</a></h2></li>
+            	</ul>
+            </div>
+			<div class="templatemo_content_left_section">
+            	<h1>Search Criteria</h1>
+                <ul>
+                    <li><h2>which City</h2></li>
+                    <li ><a href="/Home/search?u=lahore">Lahore</a></li>
+                    <li><a href="/Home/search?u=islamabad">Islamabad</a></li>
+                    <li><a href="/Home/search?u=karachi">Karachi</a></li>
+                    <li><h2>Price ranges</h2></li>
+                    <li><a href="/Home/price?u=100">1*** to 2***</a></li>
+                    <li><a href="/Home/price?u=200">2*** to 3***</a></li>
+                    <li><a href="/Home/price?u=300" >3*** to 4***</a></li>
+                    <li><h2>Category </h2></li>
+                    <li><a href="/Home/category?u=m">Mobile Phone And Accesories</a></li>
+                    <li><a href="/Home/category?u=pe">Pets</a></li>
+                    <li><a href="/Home/category?u=v" >Vehicles</a></li>
+                    <li><a href="/Home/category?u=pr" >Property</a></li>
+            	</ul>
+            </div>
+            
+        
+        </div> <!-- end of content left -->
+
+        	<div class="container">
+            <section>				
+                <div id="container_demo" >
+                    <!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
+                    <a class="hiddenanchor" id="toregister"></a>
+                    <a class="hiddenanchor" id="tologin"></a>
+                    <div id="wrapper">
+                        <div id="login" class="animate form">
+                            <form  action="/Customer/AddPost1" autocomplete="on" method="post" enctype="multipart/form-data"> 
+                                <h1>give Add Details</h1> 
+                             <p> 
+                                    @Html.Label("","Title")
+                                    @*<label for="title" class="title" data-icon="t" > Title </label>*@
+                                    @*<input id="title" name="title" required="required" type="text" placeholder="Enter attractive title of your add"/>*@
+                                    @Html.TextBoxFor(m=>m.title,new{placeholder="Enter attractive title of your add"})
+                                     @Html.ValidationMessageFor(m =>m.title)
+                                </p>
+                                
+                                <p> 
+                                    @Html.Label("","Price")
+                                   @* <label for="price" class="price" data-icon="p"> Price </label>*@
+                                    @*<input id="Price" name="Price" required="required" type="text" placeholder="Enter Price " />*@ 
+                                     @Html.TextBoxFor(m=>m.Price,new{placeholder="Enter Price"})
+                                     @Html.ValidationMessageFor(m =>m.Price)
+                                </p>
+                               <p> 
+                                   @Html.Label("","Description") 
+                                  @* <label for="description" class="description" data-icon="d"> Description </label>*@
+                                    @*<input id="description" name="description" required="required" type="text" placeholder="Enter description " />*@
+                                    @Html.TextBoxFor(m=>m.description,new{placeholder="Enter description"}) 
+                                </p>
+                                 <p> 
+                                    @Html.Label("","Category")
+                                     @*<label for="location" class="location" > Category</label>*@
+                                    <select id="category" name="category">
+                                              <option value="mobile">Mobile phones And Accessories</option>
+                                              <option value="vehicles">Vehicles</option>
+                                              <option value="pets">pets</option>
+                                              <option value="property">property</option>
+                                    </select>
+                                </p> 
+                                <p> 
+                                    @Html.Label("","Contact number")
+                                   @* <label for="contact" class="contact" data-icon="c"> Contact Number </label>*@
+                                     @Html.TextBoxFor(m=>m.contact,new{placeholder="Enter your contact number"})
+                                     @Html.ValidationMessageFor(m =>m.contact)
+
+                                    @*<input id="contact" name="contact" required="required" type="text" placeholder="Enter your contact number " /> *@
+                                </p>
+                                 <p> 
+                                    @Html.Label("","Location")
+                                     @*<label for="location" class="location" data-icon="l"> Location </label>*@
+                                    @*<input id="location" name="location" required="required" type="text" placeholder="Enter your location " />*@
+                                      @Html.TextBoxFor(m=>m.location,new{placeholder="Enter your loaction"})
+                                      @Html.ValidationMessageFor(m =>m.location) 
+                                </p>
+                                
+                              <p> 
+                                  @Html.Label("","choose Add picture")  
+                                  @*<label for="usernamesignup" class="uname" data-icon="u">Choose Profile Picture</label>*@
+                                    <input type="file" name="image" id="image" accept="image/jpeg, image/gif"/>
+                                </p>
+                                <p class="login button"> 
+                                    <input type="submit" value="AddPost" /> 
+								</p>
+                               
+                                </form>
+                        </div>
+
+                       
+						
+                    </div>
+                </div>  
+            </section>
+        </div>
+        
+        
+        </div> <!-- end of content right -->
+        
+    
+    	<div class="cleaner_with_height">&nbsp;</div>
+    </div> <!-- end of content -->
+    
+    <div id="templatemo_footer">
+    
+	       <a href="/Home/subpage">Home</a> | <a href="/Home/subpage">Search</a> | <a href="/Home/subpage">Books</a> | <a href="#">New Releases</a> | <a href="#">FAQs</a> | <a href="#">Contact Us</a><br />
+        Copyright © 2048 <a href="#"><strong>Your Company Name</strong></a> | <a href="http://www.iwebsitetemplate.com" target="_parent">Website Templates</a> by <a href="http://www.templatemo.com" target="_parent" title="free css templates">Free CSS Templates</a>	</div> 
+    <!-- end of footer -->
+<!--  Free CSS Template www.templatemo.com -->
+</div> <!-- end of container -->
+<div align=center>This template  downloaded form <a href='http://all-free-download.com/free-website-templates/'>free website templates</a></div></body>
+</html>

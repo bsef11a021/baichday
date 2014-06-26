@@ -1,0 +1,199 @@
+﻿@{
+    ViewBag.Title = "postShow";
+}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Book Store Template, Free CSS Template, CSS Website Layout</title>
+<meta name="keywords" content="Book Store Template, Free CSS Template, CSS Website Layout, CSS, HTML" />
+<meta name="description" content="Book Store Template, Free CSS Template, Download CSS Website" />
+<link href="~/Content/templatemo_style.css" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+        <meta name="description" content="WELCOME TO FREIND ZONE" />
+        <meta name="keywords" content="html5, css3, form, switch, animation, :target, pseudo-class" />
+        <meta name="author" content="Codrops" />
+        <link rel="shortcut icon" href="../favicon.ico"/> 
+        <link rel="stylesheet" type="text/css" href="~/content/demo.css" />
+        <link rel="stylesheet" type="text/css" href="~/content/style.css" />
+		<link rel="stylesheet" type="text/css" href="~/content/animate-custom.css" />
+        
+        <script src="~/Scripts/jquery-1.7.1.js"></script>
+</head>
+<body>
+
+    
+         <div id="templatemo_content_right">
+
+        	<div class="container">
+            <section>				
+                <div id="container_demo" >
+                    <!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
+                    <a class="hiddenanchor" id="toregister"></a>
+                    <a class="hiddenanchor" id="tologin"></a>
+                    <div id="wrapper">
+                        <div id="login" class="animate form">
+                            <table>
+                                <tr>
+                                    <th ><FONT  SIZE=20>
+                                        @Model.title
+                                    </FONT>
+                                    </th>
+                                    <td>
+
+                                    </td>
+                                    <th>
+                                    <img src="~/images/@Model.image" alt="image" width="70" heigth="70" />
+                                    </th>
+                                </tr>
+                                </tr>
+                                
+                                @*<tr>
+                                    <td>
+                                    <img src="~/images/@Model.image" alt="image" width="70" heigth="70" />
+                                    </td>
+                                </tr>*@
+                                
+                                <tr>
+                                    <td>
+                                    Description:
+                                    </td>
+                                 
+                                    <td>
+                                    <FONT  SIZE=5>
+                                        @Model.description
+                                        </FONT>
+                                      </td>
+                               </tr>
+                                    
+                                <tr>
+                                    <td>
+                                    Price:
+                                    </td>
+                                    <td>
+                                        <FONT  SIZE=5>
+                                        @Model.Price
+                                            </FONT>
+                                    </td>
+                                    
+                                </tr>
+                                
+                                <tr>
+                                    <td>
+                                    Loaction:
+                                    </td>
+                                     <td>
+                                         <FONT  SIZE=5>
+                                         @Model.location
+                                             </FONT>
+                                         </td>
+                                    </tr>
+                                     
+                                <tr>
+                                    <td>
+                                    Contact:
+                                    </td>
+                                    <td>     
+                                    <FONT  SIZE=5>
+                                         @Model.contact
+                                             </FONT>
+                                     </td>
+                                 </tr>
+                                
+                                <tr>
+                                    <td>
+                                    Category:
+                                    </td>
+                                    <td>
+                                        <FONT  SIZE=5>
+                                        @Model.category
+                                            </FONT>
+                                   
+                                        </td>
+                                </tr>
+
+
+
+                            </table>
+                            <br />
+                             <br />
+                             <br />
+                            <h1>Comments</h1>
+       
+                            @foreach(var a in ViewBag.l)
+        {	
+       <table>
+           <tr>
+               
+                  <FONT  SIZE=5>
+                    Name
+                      </FONT>
+               
+               
+               </tr>
+              
+               <tr>
+                    @a.Name
+               </tr>
+           
+           <tr>
+              
+                    <FONT  SIZE=5>
+                   Comment
+                        </FONT>
+             </tr>
+               <tr>
+                   @a.Comment1
+               
+           </tr>
+</table>
+                            }  
+       
+       
+   	     
+                	
+            
+
+                             <br />
+                             <br />
+                            <h1>Add Comments</h1>
+                             <form  action="/Home/AddComment" autocomplete="on" method="post" enctype="multipart/form-data"> 
+                                
+                                <p> 
+                                    <label for="Name" class="Name" data-icon="N" > Coments </label>
+                                    <input id="Name" name="Name" required="required" type="text" placeholder="Enter your Name here"/>
+                                </p>
+                                 <p> 
+                                    <label for="Comment1" class="Comment1" data-icon="C" > Coments </label>
+                                    <input id="Comment1" name="Comment1" required="required" type="text" placeholder="Enter your Comment here"/>
+                                </p>
+                                  <p class="login button"> 
+                                    <input type="submit" value="Add Comment" /> 
+								</p>
+                                 </form>
+                        </div>
+
+                       
+						
+                    </div>
+                </div>  
+            </section>
+        </div>
+        
+        
+        </div> <!-- end of content right -->
+        
+    
+    	<div class="cleaner_with_height">&nbsp;</div>
+    </div> <!-- end of content -->
+    
+    <div id="templatemo_footer">
+    
+	       <a href="/Home/subpage">Home</a> | <a href="/Home/subpage">Search</a> | <a href="/Home/subpage">Books</a> | <a href="#">New Releases</a> | <a href="#">FAQs</a> | <a href="#">Contact Us</a><br />
+        Copyright © 2048 <a href="#"><strong>Your Company Name</strong></a> | <a href="http://www.iwebsitetemplate.com" target="_parent">Website Templates</a> by <a href="http://www.templatemo.com" target="_parent" title="free css templates">Free CSS Templates</a>	</div> 
+    <!-- end of footer -->
+<!--  Free CSS Template www.templatemo.com -->
+</div> <!-- end of container -->
+<div align=center>This template  downloaded form <a href='http://all-free-download.com/free-website-templates/'>free website templates</a></div></body>
+</html>

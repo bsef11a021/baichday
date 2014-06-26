@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>BaichDay</title>
+<meta name="keywords" content="Book Store Template, Free CSS Template, CSS Website Layout, CSS, HTML" />
+<meta name="description" content="Book Store Template, Free CSS Template, Download CSS Website" />
+<link href="~/Content/templatemo_style.css" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+        <meta name="description" content="WELCOME TO FREIND ZONE" />
+        <meta name="keywords" content="html5, css3, form, switch, animation, :target, pseudo-class" />
+        <meta name="author" content="Codrops" />
+        <link rel="shortcut icon" href="../favicon.ico"/> 
+        <link rel="stylesheet" type="text/css" href="~/content/demo.css" />
+        <link rel="stylesheet" type="text/css" href="~/content/style.css" />
+		<link rel="stylesheet" type="text/css" href="~/content/animate-custom.css" />
+        <link href="~/content/fancybox.css" rel="stylesheet" type="text/css" />
+         <script type="text/javascript" src="~/Scripts/jQuery.js"></script>
+        <script type="text/javascript" src="~/Scripts/jquery-fancybox.js"></script>
+        <script src="~/Scripts/jquery-1.7.1.js"></script>
+    <script src="~/Scripts/jquery.validate-vsdoc.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div id="templatemo_container">
+	<div id="templatemo_menu">
+    	<ul>
+            <li>@Html.ActionLink("Home","index","Home")</li>
+            
+            <li>@Html.ActionLink("post a free add","sign1","Customer")</li>            
+             <li>@Html.ActionLink("Manage Adds","sign2","Customer")</li>
+            <li>@Html.ActionLink("Help","help","Home")</li> 
+           
+            <li>@Html.ActionLink("Contacts","contact","Home")</li>
+            <li>@Html.ActionLink("Search","Search1","Home")</li>
+    	</ul>
+    </div> <!-- end of menu -->
+    
+    <div id="templatemo_header" background="~/images/templatemo_header_bg_blank.jpg">
+    	
+            <div id="templatemo_special_offers">
+        	<p>
+                <span ><font color="white">special</font></span><font color="white"> discounts for
+        new Adds </font>
+        	</p>
+			<a href="http://www.nylabone.com/about/pet-store-locator/online-vendors.htm" style="margin-left: 50px;">Read more...</a>
+        </div>
+        
+        
+        <div id="templatemo_new_books">
+        	<ul>
+                <li ><font color="white">New Kinds</font> </li>
+                <li ><font color="white">of pets and many other categories</font></li>
+                <li ><font color="white">meet vendors</fon</li>
+            </ul>
+            <a href="http://www.olx.com.pk" style="margin-left: 50px;">Read more...</a>
+        </div>
+    </div> <!-- end of header -->
+    
+    <div id="templatemo_content">
+    	
+        <div id="templatemo_content_left">
+        	<div class="templatemo_content_left_section">
+            	<h1>HEY Welcome</h1>
+                <ul>
+                    <li><h2><font color="brown">Welcome to  BaichDay.com</font></h2></li>
+                    <li><h2><font color="brown">One of the amazing site</font></h2></li>
+                    <li><h2><font color="brown">where cutomers meet the sellers</font></h2></li>
+                    <li><h2><font color="brown">and sell their goods</font></h2></li>
+                    <li><h2><font color="brown">for free.</font></h2></li>
+                    <li><h2><font color="brown">Post your free adds and dont forget</font> </h2></li>
+                    <li><h2><font color="brown">to give your valuable</font> </h2></li>
+                    <li><h2><font color="brown">feedback to</font></h2></li>
+                    <li><h2><a href="http://www.facebook.com/safiyan.zulfiqar"> this link</a></h2></li>
+            	</ul>
+            </div>
+			<div class="templatemo_content_left_section">
+            	<h1>Search Criteria</h1>
+                <ul>
+                    <li><h2><font color="brown">which City</font></h2></li>
+                    <li ><a href="/Home/search?u=lahore">Lahore</a></li>
+                    <li><a href="/Home/search?u=islamabad">Islamabad</a></li>
+                    <li><a href="/Home/search?u=karachi">Karachi</a></li>
+                    <li><h2><font color="brown">Price ranges</font></h2></li>
+                    <li><a href="/Home/price?u=100">1*** to 2***</a></li>
+                    <li><a href="/Home/price?u=200">2*** to 3***</a></li>
+                    <li><a href="/Home/price?u=300" >3*** to 4***</a></li>
+                    <li><h2><font color="brown">Category </font></h2></li>
+                    <li><a href="/Home/category?u=m">Mobile Phone And Accesories</a></li>
+                    <li><a href="/Home/category?u=pe">Pets</a></li>
+                    <li><a href="/Home/category?u=v" >Vehicles</a></li>
+                    <li><a href="/Home/category?u=pr" >Property</a></li>
+            	</ul>
+            </div>
+            
+        
+        </div> <!-- end of content left -->
+    @RenderBody()
+        <div id="templatemo_footer">
+    
+	       <a href="/Home/subpage">Home</a> | <a href="/Home/subpage">Search</a> | <a href="/Home/subpage">Books</a> | <a href="#">New Releases</a> | <a href="#">FAQs</a> | <a href="#">Contact Us</a><br />
+        Copyright © 2048 <a href="#"><strong>Your Company Name</strong></a> | <a href="http://www.iwebsitetemplate.com" target="_parent">Website Templates</a> by <a href="http://www.templatemo.com" target="_parent" title="free css templates">Free CSS Templates</a>	</div> 
+    <!-- end of footer -->
+<!--  Free CSS Template www.templatemo.com -->
+</div> <!-- end of container -->
+<div align=center>This template  downloaded form <a href='http://all-free-download.com/free-website-templates/'>free website templates</a></div>
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
